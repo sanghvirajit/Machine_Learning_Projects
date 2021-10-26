@@ -27,10 +27,6 @@ The raw dataset is in the file **"CreditScoring.csv"** which contains 4455 rows 
 
 # Steps Involved
 
-Part 1 - Data Processing: 
-Part 2 - Profiling: 
-Part 3 - Logistic Regression Model: In statistics, logistic regression(or logit regression), is a regression model where the dependent variable is categorical. This article covers the case of a binary dependent variable—that is, where the output can take only two values, "0" and "1", which represent outcomes such as pass/fail, win/lose etc.
-
 * Part 1 - **Data Processing** : Cleaning and Transforming Raw Data into the Understandable Format
 * Part 2 - **Profiling** : Data profiling is the process of examining the data available from an existing information source (e.g. a database or a file) and collecting statistics or informative summaries about that data.
 * Part 3 - **Exploratory Data Analysis - EDA**: Finding insights from the Data
