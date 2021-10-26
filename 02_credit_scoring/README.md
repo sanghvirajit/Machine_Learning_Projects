@@ -1,20 +1,9 @@
-Credit Scoring
-=============
+# Credit Score Analysis
 
-Petit example of credit scoring analysis based on the 
-[data mining course](http://www.lsi.upc.edu/~belanche/Docencia/mineria/mineria.html) of my former PhD adviser Tomas Aluja
+A credit scoring model is a tool that is typically used in the decision-making process of accepting or rejecting a loan. A credit scoring model is the result of a statistical model which, based on information about the borrower (e.g. age, number of previous loans, etc.), allows one to distinguish between "good" and "bad" loans and give an estimate of the probability of default.
 
-The project contains two datasets in csv format (raw data, and cleaned data), as well as the R scripts for the analysis 
+Loan Default: In finance, default is failure to meet the legal obligations of a loan, for example when a home buyer fails to make a mortgage payment, or when a corporation or government fails to pay a bond which has reached maturity.
 
-* Part 1 - **Data Processing**
-* Part 2 - **Profiling**
-* Part 3 - **Principal Components Analysis**
-* Part 4 - **Multiple Correspondence Analysis**
-* Part 5 - **Clustering Analysis**
-* Part 6 - **Decision Trees**
-* Part 7 - **Logistic Regression**
-
-------------
 The raw dataset is in the file **"CreditScoring.csv"** which contains 4455 rows and 14 columns:
 
 <table>
@@ -35,3 +24,48 @@ The raw dataset is in the file **"CreditScoring.csv"** which contains 4455 rows 
 <tr><td><b>14 Price</b></td> <td> price of good</td></tr>
 </tbody>
 </table>
+
+# Steps Involved
+
+Part 1 - Data Processing: 
+Part 2 - Profiling: 
+Part 3 - Logistic Regression Model: In statistics, logistic regression(or logit regression), is a regression model where the dependent variable is categorical. This article covers the case of a binary dependent variable—that is, where the output can take only two values, "0" and "1", which represent outcomes such as pass/fail, win/lose etc.
+
+* Part 1 - **Data Processing** : Cleaning and Transforming Raw Data into the Understandable Format
+* Part 2 - **Profiling** : Data profiling is the process of examining the data available from an existing information source (e.g. a database or a file) and collecting statistics or informative summaries about that data.
+* Part 3 - **Exploratory Data Analysis - EDA**: Finding insights from the Data
+* Part 4 - **Decision Trees**: Building Decision tree model and hyperparameter tuning, to find the best parameters.
+* Part 5 - **Ensemble Learning and Random Forest**: Random forest and hyperparameter tuning, to find the best parameters.
+* Part 6 - **Gradient Boosting and XGBoost**: XGBoost and hyperparameter tuning, to find the best parameters.
+* Part 7 - **Selecting the Best Model**: XGBoost gives the best results on validation dataset
+* Part 8 - **Deploying the model on AWS Cloud**
+
+# Model Results
+
+1. Decision Tree
+  
+    train auc:  0.7649428201228099
+  
+    val auc:  0.6786769513937663
+
+2. Random Forest
+  
+    train auc:  0.8216579347642387
+  
+    val auc:  0.6690077740912064
+    
+3. **XGBoost**
+  
+    train auc:  **0.9416645541096276**
+  
+    val auc:  **0.8348035891598655**
+    
+# Commands to run the project locally
+
+```scala
+activate conda py38
+python3 -m pipenv --python 3.8 shell 
+docker build -t credit_scoring .
+docker run -it --rm -p 9696:9696 credit_scoring
+python3 predict-test.py
+``` 
