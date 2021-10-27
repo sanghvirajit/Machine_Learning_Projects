@@ -53,6 +53,21 @@ This is a type of data augmentation for the minority class and is referred to as
 
 ![ROC_AUC_CURVE](https://user-images.githubusercontent.com/69073063/139042538-4933927c-1620-481f-aa20-655a01caaeb3.png)
 
+## Requirements
+
+```scala
+Python 3.8
+numpy: 1.21.2
+pandas: 1.3.4
+scikit-learn: 1.0
+scipy: 1.7.1
+waitress: 2.0.0
+flask: 2.0.2
+xgboost: 1.5.0
+requests: 2.26.0
+awsebcli: 3.20.2
+``` 
+
 ## Commands to run the project locally
 
 ```scala
@@ -72,3 +87,18 @@ docker build -t fraud_detection .
 docker run -it --rm -p 9696:9696 fraud_detection
 python3 predict-test-cloud.py
 ``` 
+# LightGBM vs. XGBoost vs. CatBoost 
+
+XGBoost was originally produced by University of Washington researchers and is maintained by open-source contributors. XGBoost uses the gradients of different cuts to select the next cut, but XGBoost also uses the hessian, or second derivative, in its ranking of cuts. Computing this next derivative comes at a slight cost, but it also allows a greater estimation of the cut to use.
+
+LightGBM is a boosting technique and framework developed by Microsoft. LightGBM is unique in that it can construct trees using Gradient-Based One-Sided Sampling, or GOSS for short. GOSS looks at the gradients of different cuts affecting a loss function and updates an underfit tree according to a selection of the largest gradients and randomly sampled small gradients. GOSS allows LightGBM to quickly find the most influential cuts.
+
+CatBoost is developed and maintained by the Russian search engine Yandex. CatBoost distinguishes itself from LightGBM and XGBoost by focusing on optimizing decision trees for categorical variables, or variables whose different values may have no relation with each other (eg. apples and oranges). To compare apples and oranges in XGBoost, you’d have to split them into two one-hot encoded variables representing “is apple” and “is orange,” but CatBoost determines different categories automatically with no need for preprocessing (LightGBM does support categories, but has more limitations than CatBoost).
+
+# My own findings
+
+Catboost outperformed LightGBM and gave very similar finding when compared to XGBoost, with XGBoost resulting validation auc slightly better than CatBoost.
+
+Training with CatBoost was much faster than XGBoost.
+
+My dataset was small, hence I finally opted for XGBoost, but if incase my dataset were large enough, I would have definitely opted for CatBoost with SMOTE as my final model.
