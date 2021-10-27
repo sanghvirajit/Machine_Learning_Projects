@@ -18,8 +18,8 @@ app = Flask('fraud_detection')
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    customer = request.get_json()
 
+    customer = request.get_json()
     xcustomer = dv.transform([customer])
     dcustomer = xgb.DMatrix(xcustomer, feature_names=dv.get_feature_names())
     y_pred = model.predict(dcustomer)
