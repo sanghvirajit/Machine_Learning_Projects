@@ -10,7 +10,7 @@ In all the projects, following task were performed
 
 **Part 3** - Exploratory Data Analysis - EDA: Finding insights from the Data
 
-**Part 4** - Building the different model like Logistic Regresion, Decision Tree, Random Forest, and XGBoost, and tuning it's hyperparameters.
+**Part 4** - Building the different model like Logistic Regresion, Decision Tree, Random Forest, XGBoost, LightGBM, CatBoost and tuning it's hyperparameters.
 
 **Part 5** - Selecting the Best Model
 
