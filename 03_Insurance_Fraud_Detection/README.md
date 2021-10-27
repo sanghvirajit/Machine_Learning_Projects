@@ -26,7 +26,7 @@ The raw dataset is in the file **"insurance_claim.csv"** which contains 1000 row
 
 **Part 7** - **LightGBM and CatBoost**: Hyperparameter tuning, to find the best parameters.
 
-**Part 7** - War between Boosting algorithm, Selecting the Best Model: XGBoost gives the best results on test dataset.
+**Part 7** - War between Boosting algorithm, Selecting the best model: **XGBoost gives the best results on test dataset**.
 
 **Part 8** - Deploying the model on AWS Cloud
 
@@ -37,9 +37,21 @@ The simplest approach involves duplicating examples in the minority class, altho
 Instead, new examples can be synthesized from the existing examples. 
 This is a type of data augmentation for the minority class and is referred to as the **Synthetic Minority Oversampling Technique, or SMOTE** for short.
 
+### Before SMOTE
+
+![imbalance](https://user-images.githubusercontent.com/69073063/139042277-cfe8f2c5-7e13-4005-bebc-4359a1e9c2dd.png)
+
+### After SMOTE
+
+![balance](https://user-images.githubusercontent.com/69073063/139042373-cc1b2cda-c426-4f05-8643-cd43ea39a593.png)
+
 ## Model Summary
 
 ![model_summary](https://user-images.githubusercontent.com/69073063/138944750-e64b36dd-d05c-4fb7-9e6f-fbac7e466a53.png)
+
+### ROC_AUC Curve of the final model on **test dataset**
+
+![ROC_AUC_CURVE](https://user-images.githubusercontent.com/69073063/139042538-4933927c-1620-481f-aa20-655a01caaeb3.png)
 
 ## Commands to run the project locally
 
