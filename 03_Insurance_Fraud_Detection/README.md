@@ -90,6 +90,8 @@ python3 predict-test-docker.py
 python3 predict-test-cloud.py
 ``` 
 
+![test-result](https://user-images.githubusercontent.com/69073063/139287373-ce68d061-1381-4291-8969-912e099ddce3.png)
+
 **I will terminate the service on 09.11.2021, after the end of peer-review week**
 
 **Commands used to deploy the model on cloud, You do not need to run the following commands**
