@@ -80,13 +80,36 @@ python3 predict-test-docker.py
 
 ## Commands to run the project from cloud service
 
+**Service is already running on the cloud.**
+
+![AWS](https://user-images.githubusercontent.com/69073063/139234840-b3846b5c-ec37-47f5-bd58-e26e3f942ff5.png)
+
+**To test it, just run the following command in console.**
+
+```scala
+python3 predict-test-cloud.py
+``` 
+
+**I will terminate the service on 09.11.2021, after the end of peer-review week**
+
+**Commands used to deploy the model on cloud, You do not need to run the following commands**
+
 ```scala
 activate conda py38
 python3 -m pipenv --python 3.8 shell 
-docker build -t fraud_detection .
-docker run -it --rm -p 9696:9696 fraud_detection
+pipenv install awsebcli –dev
+eb init –p docker –r eu-central-1 fraud_detection 
+eb local run 
+eb create fraud-detection-env
+``` 
+
+**public endpoint that could be tested:** 
+
+```scala
 python3 predict-test-cloud.py
 ``` 
+
+
 # LightGBM vs. XGBoost vs. CatBoost 
 
 XGBoost was originally produced by University of Washington researchers and is maintained by open-source contributors. XGBoost uses the gradients of different cuts to select the next cut, but XGBoost also uses the hessian, or second derivative, in its ranking of cuts. Computing this next derivative comes at a slight cost, but it also allows a greater estimation of the cut to use.
