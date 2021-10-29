@@ -2,8 +2,8 @@ import requests
 import pandas as pd
 import json
 
-host = 'churn-serving-env.eba-gyzkzxig.eu-central-1.elasticbeanstalk.com'
-url = f'http://{host}/predict_flask'
+host = 'fraud-detection-env.eba-fgzgvju3.eu-central-1.elasticbeanstalk.com'
+url = f'http://{host}/predict'
 
 df = pd.read_csv("customer_test.csv")
 

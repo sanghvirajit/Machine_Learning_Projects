@@ -11,10 +11,12 @@ from sklearn.feature_extraction import DictVectorizer
 
 output_file = 'model_xgb.bin'
 
-
+print("Reading the file....")
 # reading the file
 
 df = pd.read_csv("insurance_claims.csv")
+
+print("Preprocessing....")
 df = df.replace('?', np.NaN)
 
 
@@ -70,7 +72,7 @@ numerical = ['months_as_customer', 'age', 'policy_deductable',
        'total_claim_amount', 'injury_claim', 'property_claim', 'vehicle_claim',
        'fraud_reported', 'vehicle_age']
 
-
+print("Splitting the data....")
 # Splitting the Data
 
 
@@ -108,7 +110,7 @@ features = dv.get_feature_names()
 dtrain_full = xgb.DMatrix(X_train_full, label=y_train_full, feature_names=features)
 dtest = xgb.DMatrix(X_test, label=y_test, feature_names=features)
 
-
+print("Training the final model....")
 # XGBoost Final Model:
 
 xgb_params = {
@@ -126,6 +128,7 @@ xgb_params = {
 
 model = xgb.train(xgb_params, dtrain_full, num_boost_round=75)
 
+print("Saving the model....")
 # Save the model
 
 with open(output_file, 'wb') as f_out:
