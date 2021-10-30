@@ -67,6 +67,11 @@ xgboost: 1.5.0
 requests: 2.26.0
 awsebcli: 3.20.2
 ``` 
+### Deployment of model
+
+I am currently using Windows, so I used waitress in order to deploy the model. 
+
+To deploy this model with waitress, please use: waitress-serve --listen=0.0.0.0:9696 predict:app
 
 ## Commands to run the project locally
 
@@ -77,7 +82,6 @@ docker build -t fraud_detection .
 docker run -it --rm -p 9696:9696 fraud_detection
 python3 predict-test-docker.py
 ``` 
-
 ## Commands to run the project from cloud service
 
 **Service is already running on the cloud.**
