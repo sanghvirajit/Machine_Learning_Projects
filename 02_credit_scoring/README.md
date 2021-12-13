@@ -40,21 +40,21 @@ The raw dataset is in the file **"CreditScoring.csv"** which contains 4455 rows 
 
 1. Decision Tree
   
-    train auc:  0.7649428201228099
+    train auc:  0.765
   
-    val auc:  0.6786769513937663
+    val auc:  0.679
 
 2. Random Forest
   
-    train auc:  0.8216579347642387
+    train auc:  0.822
   
-    val auc:  0.6690077740912064
+    val auc:  0.669
     
 3. **XGBoost**
   
-    train auc:  **0.9416645541096276**
+    train auc:  **0.942**
   
-    val auc:  **0.8348035891598655**
+    val auc:  **0.835**
     
 # Commands to run the project locally
 
