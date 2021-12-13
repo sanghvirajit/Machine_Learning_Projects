@@ -16,5 +16,13 @@ In all the projects, following task were performed
 
 **Part 6** - **Model Deployment - Deploying the model on AWS Cloud**
 
+**Part 7** - **Deep Learning**
+
+**Part 8** - **Transfer Learning and Pre-trained Neural Network Architectures like Xception, VGG16, VGG19 and ResNet50**
+
+**Part 9** - **Deployment of deep learning model using AWS Lambda**
+             **Serverless Deep Learning**
+
+
 About the Bootcamp: https://github.com/alexeygrigorev/mlbookcamp-code
 
